@@ -1,0 +1,243 @@
+:root {
+  --footer-height: 103px;
+  --footer-height-mobile: 49px;
+}
+
+@font-face {
+  font-family: 'Filson Pro';
+  src: url('./fonts/FilsonProRegular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rolla';
+  src: url('./fonts/Rolla.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: inherit;
+  list-style: none;
+  color: #3D3D3D;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - var(--footer-height));
+  padding: 81px 48px 68px;
+  background-color: #FFB3BE;
+}
+
+.content__section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content__section--center {
+  align-items: center;
+}
+
+.logo {
+  width: 121px;
+  height: 107px;
+}
+
+.content__info {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 800px;
+  margin-left: 40px;
+}
+
+.content__info--center {
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav__title {
+  font-family: Rolla;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 18px;
+  margin-bottom: 6px;
+}
+
+.nav__item {
+  font-family: Filson Pro;
+  font-size: 14px;
+  font-weight: 350;
+  line-height: 22px;
+  cursor: pointer;
+}
+
+.nav__item:hover {
+  text-decoration: underline;
+}
+
+.box-placeholder {
+  width: 50px;
+}
+
+.copyright {
+  width: 121px;
+}
+
+.inspiration {
+  display: flex;
+  align-items: center;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  margin-left: 7px;
+}
+
+.social-icon {
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.social-icon:last-child {
+  margin: 0;
+}
+
+.content__text {
+  font-family: Rolla;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--footer-height);
+  padding: 0 48px;
+}
+
+.footer__logo {
+  height: auto;
+  max-width: 100px; 
+}
+
+.copyright-mobile {
+  display: none;
+}
+
+@media (max-width: 1280px) {
+  .box-placeholder {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer__logo {
+    transform: scale(0.8);
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    height: calc(100vh - var(--footer-height-mobile));
+    padding: 36px 27px 40px;
+  }
+
+  .logo {
+    position: absolute;
+    bottom: 90px;
+    right: 27px;
+    width: 95px;
+    height: 84px;
+  }
+
+  .mobile-hidden {
+    display: none;
+  }
+
+  .mobile-column {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .content__info--mobile {
+    margin: 0;
+    width: 200px;
+  }
+
+  .contect__section--mobile-column {
+
+  }
+
+  .copyright-mobile {
+    margin-top: 24px;
+  }
+
+  .inspiration {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .social-icons {
+    margin: 0;
+    margin-top: 4px;
+  }
+
+  .social-icon {
+    margin-right: 10px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .footer {
+    padding: 0 16px 0 28px;
+    height: var(--footer-height-mobile);
+  }
+
+  .footer__logo {
+    transform: scale(1);
+  }
+
+  .footer__logo--master,
+  .footer__logo--ups,
+  .footer__logo--gls,
+  .footer__logo--dhl {
+    display: none;
+  }
+
+  .footer__logo--paypal {
+    order: 1;
+    width: 54px;
+  }
+  
+  .footer__logo--visa {
+    order: 2;
+    width: 46px;
+    height: 15px;
+  }
+  
+  .footer__logo--klarna {
+    order: 3;
+    width: 30px;
+    height: 15px;
+  }
+  
+  .footer__logo--e {
+    order: 0;
+  }
+}
